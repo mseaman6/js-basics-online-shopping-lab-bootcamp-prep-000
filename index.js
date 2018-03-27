@@ -21,10 +21,12 @@ function viewCart() {
   } else {
     var cartDesc = '';
     for(var i=0; i<cart.length; i++) {
+      var cartItemName = cart[i].itemName;
+      var cartItemPrice = cart[i].itemPrice;
       if(i===cart.length) {
-        cartDesc = cartDesc + `and ${cart[i][itemName]} at $${cart[i][itemPrice]}`;
+        cartDesc = cartDesc + `and ${cartItemName} at $${cartItemPrice}`;
       } else {
-        cartDesc = cartDesc + `${cart[i][itemName]} at $${cart[i][itemPrice]},`;
+        cartDesc = cartDesc + `${cartItemName} at $${cartItemPrice},`;
       }
     }
     return `In your cart, you have ${cartDesc}.`;
